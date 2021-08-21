@@ -39,8 +39,8 @@ function App() {
         </div>
         {!isLoggedIn && <SignIn auth={auth} />}
         <SignOut auth={auth} />
-        {isLoggedIn && <span>User logged in</span>}
       </header>
+      {isLoggedIn && <span>User logged in</span>}
     </div>
   );
 }
