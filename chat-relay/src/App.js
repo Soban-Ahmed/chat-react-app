@@ -3,6 +3,9 @@ import "firebase/firestore";
 import "firebase/auth";
 import "firebase/analytics";
 import { SignIn, SignOut } from "./components/Auth";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+import "./App.css";
 
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useCollectionData } from "react-firebase-hooks/firestore";
@@ -30,6 +33,10 @@ function App() {
   return (
     <div className="app">
       <header>
+        <h1>Sign In</h1>
+        <div>
+          <FontAwesomeIcon icon={faUser} />
+        </div>
         <SignOut auth={auth} />
       </header>
       {isLoggedIn ? <span>User logged in</span> : <SignIn auth={auth} />}
