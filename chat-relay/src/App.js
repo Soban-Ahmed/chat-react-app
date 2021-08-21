@@ -2,6 +2,7 @@ import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
 import "firebase/analytics";
+import SignIn from "./components/Auth";
 
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useCollectionData } from "react-firebase-hooks/firestore";
@@ -25,7 +26,12 @@ const firestore = firebase.firestore();
 const analytics = firebase.analytics();
 
 function App() {
-  return <div>Hello World</div>;
+  const [isLoggedIn] = useAuthState(auth);
+  return (
+    <div className="app">
+      {isLoggedIn ? <span>User logged in</span> : <SignIn auth={auth} />}
+    </div>
+  );
 }
 
 export default App;
