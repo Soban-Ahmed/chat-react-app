@@ -13,10 +13,10 @@ if (process.env.NODE_ENV === "development") {
   firebase.initializeApp({
     apiKey: process.env.REACT_APP_APIKEY,
     authDomain: process.env.REACT_APP_AUTHDOMAIN,
-    projectID: process.env.REACT_APP_PROJECTID,
+    projectId: process.env.REACT_APP_PROJECTID,
     storageBucket: process.env.REACT_APP_STORAGEBUCKET,
-    messagingSenderID: process.env.REACT_APP_MESSAGINGSENDERID,
-    appID: process.env.REACT_APP_APPID,
+    messagingSenderId: process.env.REACT_APP_MESSAGINGSENDERID,
+    appId: process.env.REACT_APP_APPID,
   });
 }
 
