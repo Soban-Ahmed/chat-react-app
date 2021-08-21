@@ -37,9 +37,10 @@ function App() {
         <div>
           <FontAwesomeIcon icon={faUser} />
         </div>
+        {!isLoggedIn && <SignIn auth={auth} />}
         <SignOut auth={auth} />
+        {isLoggedIn && <span>User logged in</span>}
       </header>
-      {isLoggedIn ? <span>User logged in</span> : <SignIn auth={auth} />}
     </div>
   );
 }
